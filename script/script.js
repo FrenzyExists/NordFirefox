@@ -165,9 +165,14 @@ function toggleMnu() {
 
     if (x.style.visibility === "hidden") {
       x.style.visibility = "visible";
+      $('g-icon').style.background = '#3b4252';
+      $('g-icon').style.borderRadius = '4px';
+      $('ok').style.fill = '#9A5B63'
+      
     } else {
-
-      x.style.visibility = "hidden";
+        $('g-icon').style.background = null;
+        $('ok').style.fill = '#D8DEE9'
+        x.style.visibility = "hidden";
     }
   } 
 
@@ -178,6 +183,8 @@ function hideMnu(event) {
     // console.log(event.currentTarget === target)
     if (event.currentTarget !== target) {
         x.style.visibility = "hidden";
+        $('g-icon').style.background = null;
+        $('ok').style.fill = '#D8DEE9'
     }
 }
 

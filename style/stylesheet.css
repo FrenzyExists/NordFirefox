@@ -101,8 +101,6 @@ body {
 	width: 2rem;
 }
 .g-icon:hover {
-	fill: #81A1C1 !important;
-	;
 	background: #3b4252;
 	border-radius: 4px;
 }
@@ -236,6 +234,7 @@ h1 {
 	border-bottom: 1px solid #81A1C1 !important;
 }
 .search_button {
+	cursor: pointer;
 	position: absolute;
 	font-family: 'FuraCode Nerd Font';
 	font-size: 1.75rem;
@@ -250,6 +249,13 @@ h1 {
 	color: #D8DEE9;
 	transition: color 0.5s, background-color 0.5s, border 0.5s;
 }
+
+.search_button:hover {
+	background: #2e3440;
+	border: 1px solid #2e3440;
+	color: #b3bac9;
+}
+
 #q:focus-within+.search_button {
 	background: #2e3440;
 	border: 1px solid #2e3440;
