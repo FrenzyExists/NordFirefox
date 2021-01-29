@@ -107,7 +107,7 @@
 			<h1>The Nord</h1>
 			<form action="javascript: submit();" autocomplete="off">
 				<input id="q" type="text" autofocus placeholder="JUST DO IT!" onkeypress="javascript:handleQuery(event,this.value);">
-				<input id="search_button_homepage" class="search_button" type="submit" tabindex="2" value=""> </form>
+				<input id="search_button_homepage" class="search_button" type="button" tabindex="2" value="" onclick="console.log('BUH'); $('q').addEventListener('click', handleQuery(event, $('q').value))"> </form>
 			<!-- All subcontainers go here :D -->
 			<div id="menu">
 				<ul>

@@ -10,7 +10,7 @@
 // + ------ Settings (JS) - BEGIN ------ +
 
 // Rss URLs (Randomly picked onLoad and after animation ends)
-var MIN = 3; var MAX = 5;
+var MIN = 10; var MAX = 20;
 var FEED_NUM  = Math.floor(Math.random() * (MAX - MIN) + MIN);
 var FPS       = 100;                                             // Animation speed
 var STEP      = 1.0;                                            // Animation steps (px)
@@ -29,9 +29,12 @@ var $=function(id) { return document.getElementById(id); }
 var FEEDS=[ // Rss URLs (Randomly picked onLoad and after animation ends)                                                                                     
     "http://feeds.feedburner.com/ign/comics-articles.xml",     
     "http://www.gamespot.com/feeds/reviews/",
+    "https://www.cbsnews.com/latest/rss/technology",
     "http://reddit.com/r/programming/.rss",
     "http://feeds.feedburner.com/ign/tech-articles.xml",
+    "https://www.cbsnews.com/latest/rss/politics",
     "https://blog.codinghorror.com/rss/",
+    "https://www.cbsnews.com/latest/rss/science",
 ];
 
 // Search Engines
@@ -136,8 +139,9 @@ function build() { // Build menus
 
 function handleQuery(e,q) { // Handle search query
     var key=e.keyCode || e.which;
-
-    if(key==13) { // enter
+    // console.log("ok");
+    console.log(key)
+    if(key==13 || key==1) { // enter
         if(q.lastIndexOf("!")!=-1) {
             var x=q.lastIndexOf("!"),found=false;
             
@@ -253,7 +257,10 @@ function feedLoaded(result) { // Load and write rss
 
             $('content').innerHTML+="<  class=\"rss-title\" onclick=\"javascript: window.location = \'" + entry.link + "\';\""  + ">" + entry.title + "</a>";
             
-            if(i<result.feed.entries.length-1) { $('content').innerHTML+=" " + tickySpacer + " "; }                                                       // Rss separator
+		    // Rss separator
+            if(i<result.feed.entries.length-1) { 
+				$('content').innerHTML+=" " + tickySpacer + " "; 
+			}
         }
 
         //Start
