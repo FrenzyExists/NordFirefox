@@ -281,8 +281,10 @@ h1 {
 }
 #menu ul li a {
 	color: #d8dee9;
-	font-size: 13px;
+	font-size: 13.5px;
 	text-decoration: none;
+	font-weight: 610;
+	font-family: "Rubik";
 }
 #menu ul li a:hover {
 	color: #EBCB8B;
